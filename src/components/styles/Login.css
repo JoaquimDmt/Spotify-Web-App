@@ -1,0 +1,39 @@
+.login{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #090909;
+    overflow-y: overlay;
+}
+.login .logos{
+    display: grid;
+    place-items: center;
+    padding: .5em;
+}
+.login img:nth-of-type(1){
+    width: 50%;
+    min-width: 300px;
+}
+.login img:nth-of-type(2){
+    width: 30%;
+    min-width: 300px;
+}
+.login span{
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+}
+.login a{
+    margin: .5em;
+    padding: 1em 1.5em;
+    border-radius: 3em;
+    background-color: #1eac50;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    transition: all .5s ease;
+}
+.login a:hover{
+    transform: scale(1.1);
+    color: #090909;
+}
