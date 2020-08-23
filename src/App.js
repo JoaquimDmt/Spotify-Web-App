@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login from './components/Login';
+import Sidebar from './components/Sidebar';
+import Main from './components/Main';
+import Footer from './components/Footer';
 import { getTokenFromResponse } from "./spotify";
 
 function App() {
 
   const [token, setToken] = useState(null);//de base : pas de token
+  // const [token, setToken] = useState("skip-token");//supprimer après développement
   
   useEffect(() => {
     const hash = getTokenFromResponse(); //la fonction renvoi un objet (cf. spotify.js) ->
@@ -23,7 +27,15 @@ function App() {
     <div className="app">
       {
         token ? (
-          <h1>GG !</h1>
+          <div className="app__container">
+            <div className="app__body">
+              <Sidebar/>
+              <Main/>
+            </div>
+            <div className="app__footer">
+              <Footer/>
+            </div>
+          </div>
         ) : (
           <Login/>
         )

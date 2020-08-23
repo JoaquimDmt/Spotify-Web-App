@@ -2,7 +2,10 @@
   margin: 0;
   user-select: none;
 }
-
-body{
-  font-family: Arial, Helvetica, sans-serif;
+.app__container{
+  color: white;
+}
+.app__body{
+  display: flex;
+  height: 100vh;
 }

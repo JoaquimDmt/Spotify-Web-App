@@ -1,5 +1,5 @@
-import React from 'react'
-import './styles/Login.css'
+import React from 'react';
+import './styles/Login.css';
 import { loginUrl } from "../spotify";
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
            </div>
            <a href={loginUrl}>LOGIN WITH SPOTIFY</a>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;
