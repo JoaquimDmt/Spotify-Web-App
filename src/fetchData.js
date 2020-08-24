@@ -1,5 +1,7 @@
 //Fetching data from Spotify API Endpoints
 import { useEffect, useState } from 'react';
+const artistId = "1z7b1Pr1rSlvWRzsW3HOrS"; //Russ
+// const artistId = "0xEVr5H3VEj3g11u1q6ifW"; //MZ
 
 export const useFetch = (accessToken) => {
 
@@ -29,7 +31,7 @@ export const useFetch = (accessToken) => {
 
         const fetchArtist = async () => {
             setLoadingArtist(true);
-            const response = await fetch("https://api.spotify.com/v1/artists/1z7b1Pr1rSlvWRzsW3HOrS", { method: "GET", signal: signal,
+            const response = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, { method: "GET", signal: signal,
                 headers: { "Content-Type": "application/json",
                 "Accept": "application/json", "Authorization": `Bearer ${accessToken}`}
             });
@@ -41,7 +43,7 @@ export const useFetch = (accessToken) => {
 
         const fetchArtistAlbums = async () => {
             setLoadingArtistAlbums(true);
-            const response = await fetch("https://api.spotify.com/v1/artists/1z7b1Pr1rSlvWRzsW3HOrS/albums?include_groups=album", { method: "GET", signal: signal,
+            const response = await fetch(`https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album`, { method: "GET", signal: signal,
                 headers: { "Content-Type": "application/json",
                 "Accept": "application/json", "Authorization": `Bearer ${accessToken}`}
             });

@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  padding: 0;
   user-select: none;
 }
 .app__container{
@@ -11,4 +12,32 @@
 }
 .app__body p{
   color: black;
+}
+
+h1{
+  font-size: 8em;
+  font-weight: bold;
+}
+h2{
+  font-size: 3em;
+  font-weight: bold;
+}
+h3{
+  font-size: 2.25em;
+  font-weight: bold;
+}
+h4{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Style for Scrollbar (not working on Firefox and Internet Explorer */
+::-webkit-scrollbar{
+  width: 16px;
+}
+::-webkit-scrollbar-thumb{
+  background: #898989;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #a7a7a7;
 }

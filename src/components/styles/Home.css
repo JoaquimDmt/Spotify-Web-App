@@ -1,3 +1,47 @@
 .home{
     /* border: 1px solid ghostwhite; */
+    padding: 24px 32px;
+}
+.home__artistHeader{
+    display: flex;
+    align-items: flex-end;
+}
+
+.home__artistHeader img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.home__albumsContainer{
+    padding-top: 24px;
+    padding-right: 16px;
+}
+.home__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    column-gap: 24px;
+    row-gap: 24px;
+    margin-top: 16px;
+}
+.home__card{
+    height: fit-content;
+}
+.home__card img{
+    max-width: 100%;
+    max-height: 100%;
+    transition-duration: .2s;
+}
+.home__card:hover img{
+    filter: brightness(.3);
+}
+.home__card h4{
+    text-align: center;
+    padding: 12px 0;
+    color: white;
+}
+.home__card h4:hover{
+    text-decoration: underline white;
 }

@@ -8,8 +8,8 @@ const clientId = '95bab1d6dea24a14828cf8fdc32960d4';
 // Autorisations/permissions demandées à l'utilisateur lors de la connexion pour accéder aux fonctionnalités de Spotify sur leur compte.
 const scopes = [
     //Vous acceptez que Spotify x BeeVora puisse :
-    "user-library-read",
-    "playlist-read-private",
+    "user-library-read", //voir le contenu que vous avez sauvegardé dans Bibliothèque
+    "playlist-read-private",//voir les playlists que vous avez créées et auxquelles vous êtes abonné
 ];
 
 // lien auquel on accède en cliquant sur "Login with Spotify" (cf. documentation)

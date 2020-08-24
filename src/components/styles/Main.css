@@ -2,4 +2,6 @@
     /* border: 1px solid blue; */
     flex: 1;
     background-color: #121212;
+    overflow-y: overlay;
+    margin-bottom: 90px;
 }
