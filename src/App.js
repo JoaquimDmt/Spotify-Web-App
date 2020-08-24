@@ -4,7 +4,8 @@ import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import { getTokenFromResponse } from "./spotify";
+import { getTokenFromResponse } from "./spotifyAuth";
+import { useFetch } from "./fetchData";
 
 function App() {
 
@@ -21,16 +22,25 @@ function App() {
       if (_token) {
         setToken(_token);
       }
-  }, []); //useEffect function runs when App component loads or when what's in [] changes
- 
+  }, []); //useEffect function runs when App component loads or when what's in [] changes (similaire à componentDidMount + componentDidUpdate + componentWillUnmount)
+
+
+  // const [url, setUrl] = useState("me/playlists");
+  // const {data, loading } = useFetch("https://api.spotify.com/v1/artists/1z7b1Pr1rSlvWRzsW3HOrS/albums?include_groups=album",token);
+  const { myPlaylists, artist, artistAlbums, loadingMyPlaylists, loadingArtist, loadingArtistAlbums } = useFetch(token);
+
   return (
     <div className="app">
       {
         token ? (
           <div className="app__container">
             <div className="app__body">
-              <Sidebar/>
-              <Main/>
+              { !loadingMyPlaylists &&
+                <Sidebar playlists={myPlaylists}/>
+              }
+              { !loadingArtist && !loadingArtistAlbums &&
+                <Main artist={artist} artistAlbums={artistAlbums}/>
+              }
             </div>
             <div className="app__footer">
               <Footer/>

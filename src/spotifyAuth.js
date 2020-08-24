@@ -9,6 +9,7 @@ const clientId = '95bab1d6dea24a14828cf8fdc32960d4';
 const scopes = [
     //Vous acceptez que Spotify x BeeVora puisse :
     "user-library-read",
+    "playlist-read-private",
 ];
 
 // lien auquel on accède en cliquant sur "Login with Spotify" (cf. documentation)

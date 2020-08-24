@@ -28,6 +28,7 @@
     color: grey;
     text-decoration: none;
     margin-bottom: 16px;
+    width: 80%;
     transition: color .2s ease-in;
 }
 .sidebar__link--active, .sidebar__link:hover{
