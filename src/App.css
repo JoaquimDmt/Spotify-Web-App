@@ -9,6 +9,7 @@
 .app__body{
   display: flex;
   height: 100vh;
+  overflow-y: hidden;
 }
 .app__body p{
   color: black;

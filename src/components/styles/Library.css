@@ -1,0 +1,70 @@
+.library{
+    padding: 24px 48px 24px 32px;
+    position: relative;
+}
+
+.library__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    column-gap: 24px;
+    row-gap: 24px;
+    margin-top: 20px;
+}
+.library__card{
+    height: fit-content;
+}
+.library__card img{
+    max-width: 100%;
+    max-height: 100%;
+    transition-duration: .2s;
+}
+.library__card:hover img{
+    filter: brightness(.3);
+}
+.library__card h4{
+    text-align: center;
+    padding: 12px 0;
+    color: white;
+}
+.library__card h4:hover{
+    text-decoration: underline white;
+}
+
+.library__profileButton{
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 43px;
+    align-items: center;
+    background-color: #040404;
+    padding: 2px;
+    border: 1px solid #040404;
+    border-radius: 200px;
+}
+.library__profileButton:hover{
+    background-color: #282828;
+    border: 1px solid #282828;
+    cursor: pointer;
+}
+.library__profileButton h4{
+    padding: 0 12px 0 8px;
+}
+
+
+@media (max-width: 768px) {
+    .library__profileButton{
+        top: 19px;
+        right: 38px;
+    }
+    .library__profileButton:hover{
+        border-color: white;
+    }
+    .library__profileButton h4{
+        display: none;
+    }
+    .library h2{
+        padding-right: 56px;
+    }
+}

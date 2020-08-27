@@ -31,7 +31,7 @@ function Sidebar(props) {
             <strong>PLAYLISTS</strong>
             <hr/>
 
-            <ul>{props.playlists.items.map(item => <li> {item.name} </li>)}</ul>
+            <ul>{props.playlists.items.map(item => <li key={item.id}> {item.name} </li>)}</ul>
 
         </div>
     );

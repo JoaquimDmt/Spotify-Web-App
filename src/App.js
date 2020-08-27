@@ -25,21 +25,19 @@ function App() {
   }, []); //useEffect function runs when App component loads or when what's in [] changes (similaire à componentDidMount + componentDidUpdate + componentWillUnmount)
 
 
-  // const [url, setUrl] = useState("me/playlists");
-  // const {data, loading } = useFetch("https://api.spotify.com/v1/artists/1z7b1Pr1rSlvWRzsW3HOrS/albums?include_groups=album",token);
-  const { myPlaylists, artist, artistAlbums, loadingMyPlaylists, loadingArtist, loadingArtistAlbums } = useFetch(token);
-
+  const { myPlaylists, artist, artistAlbums, userAlbums, user, loadingMyPlaylists, loadingArtist, loadingArtistAlbums, loadingUserAlbums, loadingUser } = useFetch(token);
+  // console.log(token)
+  // console.log("dezdcnez", album)
   return (
     <div className="app">
-      {
-        token ? (
+      { token ? (
           <div className="app__container">
             <div className="app__body">
               { !loadingMyPlaylists &&
                 <Sidebar playlists={myPlaylists}/>
               }
-              { !loadingArtist && !loadingArtistAlbums &&
-                <Main artist={artist} artistAlbums={artistAlbums}/>
+              { !loadingArtist && !loadingArtistAlbums && !loadingUserAlbums && !loadingUser &&
+                <Main artist={artist} artistAlbums={artistAlbums} userAlbums={userAlbums} user={user} token={token}/>
               }
             </div>
             <div className="app__footer">
@@ -48,8 +46,7 @@ function App() {
           </div>
         ) : (
           <Login/>
-        )
-      }
+        )};
     </div>
   );
 }

@@ -9,7 +9,10 @@ const clientId = '95bab1d6dea24a14828cf8fdc32960d4';
 const scopes = [
     //Vous acceptez que Spotify x BeeVora puisse :
     "user-library-read", //voir le contenu que vous avez sauvegardé dans Bibliothèque
-    "playlist-read-private",//voir les playlists que vous avez créées et auxquelles vous êtes abonné
+    "playlist-read-private", //voir les playlists que vous avez créées et auxquelles vous êtes abonné
+    "user-read-currently-playing", //voir le contenu que vous êtes en train d'écouter
+    "user-read-playback-state",
+    "user-modify-playback-state",
 ];
 
 // lien auquel on accède en cliquant sur "Login with Spotify" (cf. documentation)
@@ -34,4 +37,3 @@ export const getTokenFromResponse = () => {
     //   expire_in:"3600"
     // }
 };
-

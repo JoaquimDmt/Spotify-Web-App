@@ -1,8 +1,9 @@
 .sidebar{
-    /* border: 1px solid red; */
     width: 14.5em;
     background-color: #040404;
     padding-top: 24px;
+    overflow-y: scroll;
+    margin-bottom: 90px;
 }
 
 .sidebar__logo{
@@ -50,7 +51,7 @@
     letter-spacing: .1em;
 }
 .sidebar ul{
-    margin-top: 1em;
+    margin: 1em 0;
 }
 .sidebar li{
     list-style: none;

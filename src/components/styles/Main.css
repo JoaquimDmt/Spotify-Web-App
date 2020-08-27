@@ -1,7 +1,7 @@
 .main{
-    /* border: 1px solid blue; */
     flex: 1;
     background-color: #121212;
     overflow-y: overlay;
+    overflow-x: hidden;
     margin-bottom: 90px;
 }
