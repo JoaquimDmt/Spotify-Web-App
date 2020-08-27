@@ -23,7 +23,7 @@ function Home(props) {
                 <h2>Albums</h2>
                 <div className="home__cards">
                     {props.artistAlbums.items.map(item => 
-                    <div className="home__card"> 
+                    <div key={item.id} className="home__card"> 
                         <img src={item.images[0].url} alt=""/>
                         <Link to={`/album/${item.id}`} style={{ textDecoration: 'none' }}>
                             <h4> {item.name} </h4> 

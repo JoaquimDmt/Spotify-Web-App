@@ -1,0 +1,205 @@
+.album{
+    background : linear-gradient(rgb(11, 118, 145) 0, #141414 75%); /*TRY TO MAKE THIS COLOR CORRESPONDING TO THE IMAGE*/
+}
+.album__trackList{
+    color: grey;
+    padding: 32px 0;
+    background: rgba(20, 20, 20, .5);
+}
+.album li{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 0 48px 0 32px;
+    padding: 9px 20px 8px 20px;
+}
+.album li.album__track:hover{
+    background-color: #2A2A2A;
+}
+.album li.album__track:hover .album__trackNumber{
+    display: none;
+}
+.album li.album__track:hover .album__trackPlayButton{
+    display: flex;
+    align-items: center;
+}
+.album hr{
+    margin: 0 48px 0 32px;
+    border: 1px solid #2A2A2A;
+}
+.album__trackNumber{
+    width: 40px;
+}
+.album__trackPlayButton{
+    display: none;
+    position: relative;
+    width: 40px;
+}
+.album__trackPlayButton > *{
+    position: absolute;
+    left: -8px;
+}
+.album__trackPlayButton > *:hover{
+    color: white;
+}
+.album__trackLike{
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+.album__trackLike > *:hover, .album__trackOptions > *:hover{
+    color: white;
+}
+.album__trackNameAndInfos{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+    min-width: 0;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+}
+.album__trackListTitle .album__trackNumber{
+    width: 80px;
+}
+.album__trackName{
+    color: white;
+    /* white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+.album__trackArtists{
+    /* white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+.album__trackInfos__mobile{
+    display: none;
+    align-items: flex-end;
+}
+.album__trackDuration{
+    width: 40px;
+}
+.album__trackDurationIcon{
+    width: 56px;
+}
+
+/* header */
+
+.album__header{
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+    position: relative;
+}
+.album__header img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+}
+.album__albumTitle{
+    padding: 0 32px;
+}
+.album__header h1{
+    font-size: 4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+}
+.album__header h2{
+    font-size: 2em;
+}
+.album__albumInfos{
+    display: flex;
+    padding-top: 8px;
+}
+.album__profileButton{
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 43px;
+    align-items: center;
+    background-color: #040404;
+    padding: 2px;
+    border: 1px solid #040404;
+    border-radius: 200px;
+}
+.album__profileButton:hover{
+    background-color: #282828;
+    border: 1px solid #282828;
+    cursor: pointer;
+}
+.album__profileButton h4{
+    padding: 0 12px 0 8px;
+}
+.album__opacityLayer{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background : linear-gradient(rgba(31,33,50, 0.3), #121212);
+}
+
+@media (max-width: 1024px) {
+    .album__trackNameAndInfos{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .album__trackInfos{
+        display: none;
+    }
+    .album__trackInfos__mobile{
+        display: flex;
+    }
+
+    .album__header img{
+        width: 200px;
+        height: 200px;
+    }
+    .album__header h1{
+        font-size: 3em;
+        -webkit-line-clamp: 2;
+    }
+    .album__header h2{
+        font-size: 1.5em;
+    }
+    .album__profileButton{
+        top: 19px;
+        right: 38px;
+    }
+    .album__profileButton:hover{
+        border-color: white;
+    }
+    .album__profileButton h4{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .album{
+        background: #141414;
+    }
+    .album__header{
+        height: 248px;
+        padding: 0;
+    }
+    .album__header img{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        position: absolute;
+    }
+    .album__albumTitle{
+        z-index: 1;
+        padding: 24px 48px 24px 32px;
+    }
+    .album__header h1{
+        font-size: 2em;
+        -webkit-line-clamp: 3;
+    }
+    .album__opacityLayer{
+        display: block;
+    }
+    
+}
