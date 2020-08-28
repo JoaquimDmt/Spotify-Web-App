@@ -8,7 +8,7 @@ function Home(props) {
     return (
         <div className="home">
             <div className="home__artistHeader">
-                <img src={props.artist.images[0].url} alt=""/>
+                <img src={props.artist.images[0].url} alt="image de profil de l'artiste"/>
                 <div className="home__opacityLayer"></div>
                 <div className="home__artistTitle">
                     <h3>Artiste</h3>
@@ -24,7 +24,9 @@ function Home(props) {
                 <div className="home__cards">
                     {props.artistAlbums.items.map(item => 
                     <div key={item.id} className="home__card"> 
-                        <img src={item.images[0].url} alt=""/>
+                        <Link to={`/album/${item.id}`}>
+                            <img src={item.images[0].url} alt="pochette de l'album"/>
+                        </Link>
                         <Link to={`/album/${item.id}`} style={{ textDecoration: 'none' }}>
                             <h4> {item.name} </h4> 
                         </Link>

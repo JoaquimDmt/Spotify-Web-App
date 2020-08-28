@@ -12,8 +12,8 @@ function Sidebar(props) {
     return (
         <div className="sidebar">
             <div className="sidebar__logo">
-                <img src="/images/spotify-white.png" alt=""/>
-                <img src="/images/beevora-logo.png" alt=""/>
+                <img src="/images/spotify-white.png" alt="logo de Spotify"/>
+                <img src="/images/beevora-logo.png" alt="logo de BeeVora"/>
             </div>
             <div className="sidebar__links">
                 <NavLink exact to="/" className="sidebar__link" activeClassName="sidebar__link--active">

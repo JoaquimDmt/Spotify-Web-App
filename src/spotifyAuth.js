@@ -11,7 +11,7 @@ const scopes = [
     "user-library-read", //voir le contenu que vous avez sauvegardé dans Bibliothèque
     "playlist-read-private", //voir les playlists que vous avez créées et auxquelles vous êtes abonné
     "user-read-currently-playing", //voir le contenu que vous êtes en train d'écouter
-    "user-modify-playback-state", // contrôler Spotify sur vos appareils (lecture musique / suivant, précedent...)
+    // "user-modify-playback-state", // contrôler Spotify sur vos appareils (lecture musique / suivant, précedent...) pas besoin pour les preview
 ];
 
 // lien auquel on accède en cliquant sur "Login with Spotify" (cf. documentation)

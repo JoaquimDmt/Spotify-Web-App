@@ -54,6 +54,8 @@
     text-align: center;
     padding: 12px 0;
     color: white;
+    width: fit-content;
+    margin: auto;
 }
 .home__card h4:hover{
     text-decoration: underline white;

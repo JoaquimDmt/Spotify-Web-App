@@ -5,6 +5,7 @@ import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded'
 import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import PlayCircleFilledTwoToneIcon from '@material-ui/icons/PlayCircleFilledTwoTone';
+import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
 import Avatar from '@material-ui/core/Avatar';
 // import { useParams } from 'react-router-dom';
 import ReactHowler from 'react-howler'
@@ -24,6 +25,7 @@ function Album(props) {
 
     const [loading, setLoading] = useState(true);
     const [album, setAlbum] = useState(null);
+    const [currentTrackPreview, setCurrentTrackPreview] = useState(null)
     const [playing, setPlaying] = useState(false);
 
     useEffect(() => {
@@ -39,6 +41,7 @@ function Album(props) {
     }, [props.token, props.albumId]);
 
     console.log(album)
+    console.log(currentTrackPreview)
     
     return (
         <>
@@ -46,7 +49,7 @@ function Album(props) {
             <div className="album">
                 
                 <div className="album__header">
-                    <img src={album.images[0].url} alt=""/>
+                    <img src={album.images[0].url} alt="pochette de l'album"/>
                     <div className="album__opacityLayer"></div>
                     <div className="album__albumTitle">
                         <h2>Album</h2>
@@ -75,8 +78,12 @@ function Album(props) {
                     <li key={item.id} className="album__track"> 
                         {/* <a href="" onClick={setPlaying(playing ? false : true)}></a> */}
                         <div className="album__trackNumber">{item.track_number}</div>
-                        <div className="album__trackPlayButton"><PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/></div>
+                        <div className="album__trackPlayButton" onClick={() => {
+                        setCurrentTrackPreview(item.preview_url); 
+                        setPlaying(true)
+                        }}><PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/></div>
                         <div className="album__trackLike"><FavoriteBorderRoundedIcon/></div>
+                        
                         <div className="album__trackNameAndInfos">
                             <div className="album__trackName">{item.name}&nbsp;</div>
                             <div className="album__trackInfos">
@@ -88,17 +95,19 @@ function Album(props) {
                             </div>
                         </div>
                         {/* <a href={item.preview_url}>url</a> */}
-                        <ReactHowler
-                            src={item.preview_url}
-                            format={['mp3']}
-                            playing={playing ? true : false}
-                        />
                         <div className="album__trackDuration">{msToMinutesAndSeconds(item.duration_ms)}</div>   
                         <div className="album__trackOptions"><MoreHorizIcon/></div>
                     </li>
                     </>
                     )}
                 </ul>
+                {currentTrackPreview && (
+                <ReactHowler
+                    src={currentTrackPreview}
+                    format={['mp3']}
+                    playing={playing ? true : false}
+                />
+                )}
             </div>
         )}
         </>

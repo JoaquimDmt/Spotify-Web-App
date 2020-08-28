@@ -11,7 +11,9 @@ function Library(props) {
             <div className="library__cards">
                 {props.userAlbums.items.map(item => 
                 <div className="library__card"> 
-                    <img src={item.album.images[0].url} alt=""/>
+                    <Link to={`/album/${item.id}`}>
+                        <img src={item.album.images[0].url} alt="pochette de l'album"/>
+                    </Link>
                     <Link to={`/album/${item.album.id}`} style={{ textDecoration: 'none' }}>
                         <h4> {item.album.name} </h4> 
                     </Link>

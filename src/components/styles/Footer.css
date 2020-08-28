@@ -14,6 +14,20 @@
     display: flex;
     justify-content: flex-start;
 }
+.footer__currentTrack *{
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 10vw;
+    text-overflow: ellipsis;
+}
+.footer__left img{
+    width: 50px;
+    padding-right: 10px;
+}
+.footer__left p{
+    color: grey;
+    padding-top: 2px;
+}
 .footer__player{
     display: flex;
     flex-direction: column;
@@ -25,9 +39,38 @@
     justify-content: space-around;
     color: #b3b3b3;
 }
+.footer__controls > *:hover{
+    color: white;
+}
+.footer__currentTrackTimer{
+    display: flex;
+    position: relative;
+}
+.footer__player hr{
+    margin-top: 16px;
+    flex: 1;
+}
+.footer__player span:first-of-type{
+    position: absolute;
+    top: 40%;
+    left: -15%;
+}
+.footer__player span:last-of-type{
+    position: absolute;
+    top: 40%;
+    right: -15%;
+}
+
 .footer__right{
     padding-right: 20px;
     flex: 0.3;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+.footer__volumeSlider{
+    color: #1db954 !important;
+    min-width: 60px;
+    max-width: 100px;
+    margin-left: 8px;
 }
