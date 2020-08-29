@@ -8,7 +8,7 @@ function Home(props) {
     return (
         <div className="home">
             <div className="home__artistHeader">
-                <img src={props.artist.images[0].url} alt="image de profil de l'artiste"/>
+                <img src={props.artist.images[0].url} alt={props.artist.name}/>
                 <div className="home__opacityLayer"></div>
                 <div className="home__artistTitle">
                     <h3>Artiste</h3>

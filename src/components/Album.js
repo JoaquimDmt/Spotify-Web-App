@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ExplicitIcon from '@material-ui/icons/Explicit';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
-import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
+// import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import PlayCircleFilledTwoToneIcon from '@material-ui/icons/PlayCircleFilledTwoTone';
-import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
+// import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
 import Avatar from '@material-ui/core/Avatar';
 // import { useParams } from 'react-router-dom';
 import ReactHowler from 'react-howler'
@@ -40,8 +40,8 @@ function Album(props) {
         fetchAlbum();
     }, [props.token, props.albumId]);
 
-    console.log(album)
-    console.log(currentTrackPreview)
+    // console.log(album)
+    // console.log(currentTrackPreview)
     
     return (
         <>
@@ -73,40 +73,57 @@ function Album(props) {
                         <div className="album__trackDurationIcon"><AccessTimeIcon/></div>
                     </li>
                     {album.tracks.items.map(item =>
-                    <>
-                    <hr/>
-                    <li key={item.id} className="album__track"> 
-                        {/* <a href="" onClick={setPlaying(playing ? false : true)}></a> */}
-                        <div className="album__trackNumber">{item.track_number}</div>
-                        <div className="album__trackPlayButton" onClick={() => {
-                        setCurrentTrackPreview(item.preview_url); 
-                        setPlaying(true)
-                        }}><PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/></div>
-                        <div className="album__trackLike"><FavoriteBorderRoundedIcon/></div>
-                        
-                        <div className="album__trackNameAndInfos">
-                            <div className="album__trackName">{item.name}&nbsp;</div>
-                            <div className="album__trackInfos">
-                                <div className="album__trackArtists">{item.artists.slice(1).map(item => item.name).join(", ")}</div>
-                            </div>
-                            <div className="album__trackInfos__mobile">
-                                {item.explicit ? (<ExplicitIcon style={{ fontSize: 20, marginRight: 2 }}/>) : ("") }
-                                <div className="album__trackArtists">{item.artists.map(item => item.name).join(", ")}</div>
-                            </div>
+                        <div key={item.id}>
+                            <hr/>
+                            <li className="album__track"> 
+
+                                <div className="album__trackNumber">
+                                    {item.track_number}
+                                </div>
+                                <div className="album__trackPlayButton" onClick={() => {
+                                setCurrentTrackPreview(item.preview_url); 
+                                setPlaying(currentTrackPreview === item.preview_url ? false : true)
+                                }}>
+                                    <PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/>
+                                </div>
+                                <div className="album__trackLike">
+                                    <FavoriteBorderRoundedIcon/>
+                                </div>
+                                
+                                <div className="album__trackNameAndInfos">
+                                    <div className="album__trackName">
+                                        {item.name}&nbsp;
+                                    </div>
+                                    <div className="album__trackInfos">
+                                        <div className="album__trackArtists">
+                                            {item.artists.slice(1).map(item => item.name).join(", ")}
+                                        </div>
+                                    </div>
+                                    <div className="album__trackInfos__mobile">
+                                        {item.explicit ? (<ExplicitIcon style={{ fontSize: 20, marginRight: 2 }}/>) : ("") }
+                                        <div className="album__trackArtists">
+                                            {item.artists.map(item => item.name).join(", ")}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {/* <a href={item.preview_url}>url</a> */}
+                                <div className="album__trackDuration">
+                                    {msToMinutesAndSeconds(item.duration_ms)}
+                                </div>   
+                                <div className="album__trackOptions">
+                                    <MoreHorizIcon/>
+                                </div>
+                            </li>
                         </div>
-                        {/* <a href={item.preview_url}>url</a> */}
-                        <div className="album__trackDuration">{msToMinutesAndSeconds(item.duration_ms)}</div>   
-                        <div className="album__trackOptions"><MoreHorizIcon/></div>
-                    </li>
-                    </>
                     )}
                 </ul>
                 {currentTrackPreview && (
-                <ReactHowler
-                    src={currentTrackPreview}
-                    format={['mp3']}
-                    playing={playing ? true : false}
-                />
+                    <ReactHowler
+                        src={currentTrackPreview}
+                        format={['mp3']}
+                        playing={playing ? true : false}
+                    />
                 )}
             </div>
         )}

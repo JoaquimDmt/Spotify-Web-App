@@ -97,11 +97,10 @@
     object-fit: cover;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
 }
-.album__albumTitle{
-    padding: 0 32px;
-}
+
 .album__header h1{
     font-size: 4em;
+    padding: 0 30px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -109,10 +108,11 @@
 }
 .album__header h2{
     font-size: 2em;
+    padding: 0 32px;
 }
 .album__albumInfos{
     display: flex;
-    padding-top: 8px;
+    padding: 8px 32px 0 32px;
 }
 .album__profileButton{
     display: flex;

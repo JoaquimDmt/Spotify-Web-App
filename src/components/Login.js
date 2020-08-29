@@ -6,9 +6,9 @@ function Login() {
     return (
         <div className="login">
             <div className="logos">
-                <img src="/images/spotify-green.png" alt="logo de Spotify"/>
+                <img src="../images/spotify-green.png" alt="logo de Spotify"/>
                 <span>X</span>
-                <img src="/images/beevora.png" alt="logo de BeeVora"/>
+                <img src="../images/beevora.png" alt="logo de BeeVora"/>
            </div>
            <a href={loginUrl}>LOGIN WITH SPOTIFY</a>
         </div>

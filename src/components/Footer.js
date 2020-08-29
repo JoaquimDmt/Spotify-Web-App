@@ -1,13 +1,13 @@
 import React from 'react';
 import "./styles/Footer.css";
 
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import PauseIcon from '@material-ui/icons/Pause';
+// import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+// import PauseIcon from '@material-ui/icons/Pause';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import RepeatRoundedIcon from '@material-ui/icons/RepeatRounded';
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
