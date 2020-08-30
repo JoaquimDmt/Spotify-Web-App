@@ -40,13 +40,10 @@ function App() {
                 <Main artist={artist} artistAlbums={artistAlbums} userAlbums={userAlbums} user={user} token={token}/>
               }
             </div>
-            <div className="app__footer">
-              <Footer/>
-            </div>
           </div>
         ) : (
           <Login/>
-        )};
+        )}
     </div>
   );
 }

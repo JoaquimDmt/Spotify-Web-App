@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 import Avatar from '@material-ui/core/Avatar';
 import "./styles/Library.css";
 
@@ -24,6 +25,7 @@ function Library(props) {
                 <Avatar alt={props.user.display_name} src={props.user.images.url} />
                 <h4>{props.user.display_name}</h4>
             </div>
+            <Footer/>
         </div>
     );
 }

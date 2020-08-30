@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import Footer from './Footer';
+
 import ExplicitIcon from '@material-ui/icons/Explicit';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 // import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import PlayCircleFilledTwoToneIcon from '@material-ui/icons/PlayCircleFilledTwoTone';
-// import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
+import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
 import Avatar from '@material-ui/core/Avatar';
 // import { useParams } from 'react-router-dom';
+
 import ReactHowler from 'react-howler'
 import "./styles/Album.css";
-import "./styles/Home.css";
+
 
 function msToMinutesAndSeconds(ms) {
     var minutes = Math.floor(ms / 60000);
@@ -25,7 +28,8 @@ function Album(props) {
 
     const [loading, setLoading] = useState(true);
     const [album, setAlbum] = useState(null);
-    const [currentTrackPreview, setCurrentTrackPreview] = useState(null)
+    const [currentTrackPreview, setCurrentTrackPreview] = useState(null);
+    const [currentTrack, setCurrentTrack] = useState(null);
     const [playing, setPlaying] = useState(false);
 
     useEffect(() => {
@@ -82,9 +86,11 @@ function Album(props) {
                                 </div>
                                 <div className="album__trackPlayButton" onClick={() => {
                                 setCurrentTrackPreview(item.preview_url); 
-                                setPlaying(currentTrackPreview === item.preview_url ? false : true)
+                                setCurrentTrack(item);
+                                setPlaying(currentTrackPreview === item.preview_url && playing ? false : true)
                                 }}>
-                                    <PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/>
+                                    {currentTrackPreview === item.preview_url && playing ? <PauseCircleFilledTwoToneIcon style={{ fontSize: 28 }}/> : <PlayCircleFilledTwoToneIcon style={{ fontSize: 28 }}/>}
+                                    
                                 </div>
                                 <div className="album__trackLike">
                                     <FavoriteBorderRoundedIcon/>
@@ -118,6 +124,7 @@ function Album(props) {
                         </div>
                     )}
                 </ul>
+
                 {currentTrackPreview && (
                     <ReactHowler
                         src={currentTrackPreview}
@@ -125,6 +132,8 @@ function Album(props) {
                         playing={playing ? true : false}
                     />
                 )}
+
+                <Footer currentTrack={currentTrack} playing={playing} albumCover={album.images[2].url}/>
             </div>
         )}
         </>

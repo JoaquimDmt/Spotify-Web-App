@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
 }
-.album hr{
+.album__trackList hr{
     margin: 0 48px 0 32px;
     border: 1px solid #2A2A2A;
 }
@@ -193,6 +193,9 @@
     .album__albumTitle{
         z-index: 1;
         padding: 24px 48px 24px 32px;
+    }
+    .album__albumTitle > *{
+        padding-left: 10px !important;
     }
     .album__header h1{
         font-size: 2em;

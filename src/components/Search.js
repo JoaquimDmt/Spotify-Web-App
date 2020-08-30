@@ -1,5 +1,6 @@
 import React from 'react';
 // import React, { useEffect, useState } from 'react';
+import Footer from './Footer';
 import SearchIcon from '@material-ui/icons/Search';
 import "./styles/Search.css";
 
@@ -28,6 +29,7 @@ function Search(props) {
         <div className="search">
             <h3>coming soon</h3>
             <h1>Search</h1><SearchIcon/>
+            <Footer/>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 import Avatar from '@material-ui/core/Avatar';
 import "./styles/Home.css";
 
@@ -34,6 +35,7 @@ function Home(props) {
                     )}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
